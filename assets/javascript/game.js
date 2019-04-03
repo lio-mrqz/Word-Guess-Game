@@ -1,7 +1,9 @@
 // Hangman Game
 // -----------------
 // variable with number of wins
-var score = 0;
+var wins = 0;
+// variable of losses
+var losses = 0
 // an array of the words to be guessed
 var heroes = ["hulk", "hawkeye", "spiderman", "thor"];
 // a loop that can adjust for the lengths of different words
@@ -18,31 +20,24 @@ while(remaining > 0){
         var userInput = event.key.toLowerCase();
         
 // an if statement that compares the userGuess vs the secret word
-//    else if (playerGuess.length !== 1){
-        // alert("Only one letter at a time");
-        if {
-            for (var j = 0; j < word.length; j++){
-                if (word[j] === playerGuess){
-                    wordToGuess[j] = playerGuess;
-                    remaining--;
-                    if (remaining == 0){
-                        break;
-                    }
-                    }
-                }
+
+    for (var j = 0; j < word.length; j++){
+        if (word[j] === playerGuess){
+            wordToGuess[j] = playerGuess;
+            remaining--;
+          } if (remaining == 0){
+            losses++;
+            break;
+          } else { wins++ }
+
         }
+       
     }
 }
 alert(wordToGuess.join(" "));
 alert("the answer was " + word);
 // number of wins
-// function updateScore() {
-//     document.getElementById("wins").innerHTML = "Wins: " + score;
-  //}
+
 // number of guesses remaining
-// letters already guessed
-// press any key to start (game logic is an object and is called by this function)
-// event listener for user input
-// document.onkeyup = function(timesTriedFn) {
-//     var timesTried = a
-//}
+
+playerGuess = document.getElementById("userInput")
